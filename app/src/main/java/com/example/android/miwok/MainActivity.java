@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     TextView numbers;
     TextView colors;
+    TextView family;
+    TextView phrases;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,14 +35,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
 
-
-
         numbers = (TextView) findViewById(R.id.numbers);
         colors = (TextView) findViewById(R.id.colors);
+        family = (TextView) findViewById(R.id.family);
+        phrases = (TextView) findViewById(R.id.phrases);
+
         numbers.setOnClickListener(this);
         colors.setOnClickListener(this);
-
-
+        family.setOnClickListener(this);
+        phrases.setOnClickListener(this);
 
     }
 
@@ -53,7 +56,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(i);
                 break;
             case R.id.colors:
-                //Toast.makeText(this,"Colors Clicked" , Toast.LENGTH_SHORT).show();
                 Intent colorIntent = new Intent(this,ColorsActivity.class );
                 startActivity(colorIntent);
                 break;
